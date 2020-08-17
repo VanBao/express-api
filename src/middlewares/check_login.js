@@ -1,6 +1,6 @@
 module.exports = async function (req, res, next) {
 
-    if (global.checkPermission.check_ignore(req.mod) == true) {
+    if (global.check_permission.check_ignore(req.mod) == true) {
         next();
     } else {
         // let user = await global.db("ep_users").select("*").where('ID', req.body.UID).first();

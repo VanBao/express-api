@@ -66,5 +66,7 @@ module.exports = {
                 },
             },
         }
-    }
+    },
+    port: 4000,
+    jwtTokenSecret: 'adsadasdasd12312312asda'
 };

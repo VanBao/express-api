@@ -25,7 +25,7 @@ app.all('/', function (request, response) {
     response.send({status: true, msg: "Welcome to  API!", code: 0, data: []});
 });
 
-app.all('/:act', [global.checkLoginMiddleware, global.verifyTokenMiddleware], async function (request, response) {
+app.all('/:act', [global.check_login_middleware, global.verify_token_middleware], async function (request, response) {
     try {
         request.body.fcode = request.headers['fcode'] ? parseInt(request.headers['fcode']) : 0;
         request.body.device = request.device.type.toUpperCase().trim();
@@ -59,6 +59,6 @@ app.all('/:act', [global.checkLoginMiddleware, global.verifyTokenMiddleware], as
     }
 });
 
-app.listen(4000, function () {
+app.listen(global.config.port, function () {
     console.log("API Init Completed.");
 })

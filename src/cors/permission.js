@@ -25,8 +25,8 @@ exports.check_function = function (method, controller, fun, role) {
         return false;
     }
 };
+
 exports.check_ignore = function (fun) {
-    // console.log(ignore.indexOf(fun))
     if (ignore.indexOf(fun) !== -1) {
         return true;
     } else {
