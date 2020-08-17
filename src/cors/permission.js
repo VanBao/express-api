@@ -1,7 +1,12 @@
 const arrRoutes = {
+    "get": {
+        "introduction": {
+            "list_introduction": "all"
+        }
+    }
 };
 let ignore = [
-    "login", "register"
+    "login", "register", "list_introduction"
 ];
 
 

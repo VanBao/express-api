@@ -1,22 +1,17 @@
-/**
- * @author Hai <thanhaideveloper@gmail.com>
- * @target config param global
- */
-
 global.config = require('./config');
 
 global.checkPermission = require('./permission');
 
-global.db = require('../db/knex');
+global.db = require('./db');
 
 global.request = require('../helpers/requets');
 
-global.ultility = require('../helpers/ultility');
+global.helper_functions = require('../helpers/helper_functions');
 
-global.checkLoginMiddleware = require('../middlewares/checkLogin');
+global.checkLoginMiddleware = require('../middlewares/check_login');
 
-global.verifyTokenMiddleware = require('../middlewares/verifyToken');
+global.verifyTokenMiddleware = require('../middlewares/verify_token');
 
-global.paging = require('../helpers/knex-pagination');
+global.paging = require('../helpers/knex_pagination');
 
 global.mail = require("../helpers/mail");
