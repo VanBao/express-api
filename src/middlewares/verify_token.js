@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 module.exports = async function (req, res, next) {
     let mod = (req.method == 'POST' || req.method == 'PUT') ? (req.body.mod ? req.body.mod.replace(/[^a-z0-9\_\-]/i, '').toLowerCase() : '') : (req.query.mod ? req.query.mod.replace(/[^a-z0-9\_\-]/i, '').toLowerCase() : '');
     req.mod = mod;
-    if(req.mod.length == 0){
+    if(!req.mod.length){
         res.status(200).send({status: false, msg: 'error', code: 702});
     }else if (global.check_permission.check_ignore(mod) == true) {
         next();

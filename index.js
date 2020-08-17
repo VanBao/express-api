@@ -27,7 +27,6 @@ app.all('/', function (request, response) {
 
 app.all('/:act', [global.check_login_middleware, global.verify_token_middleware], async function (request, response) {
     try {
-        request.body.fcode = request.headers['fcode'] ? parseInt(request.headers['fcode']) : 0;
         request.body.device = request.device.type.toUpperCase().trim();
         request.body.requestIp = request.clientIp;
         let act = request.params.act.replace(/[^a-z0-9\_\-]/i, '').toLowerCase();
